@@ -127,6 +127,130 @@
     $("select").niceSelect();
 
     /*----------------------------------------------------*/
+    /*  Scroll Reveal Animations (Intersection Observer)
+      /*----------------------------------------------------*/
+    function initScrollReveal() {
+        var revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .stagger-children');
+        
+        if (revealElements.length === 0) return;
+        
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        revealElements.forEach(function(el) {
+            observer.observe(el);
+        });
+    }
+    initScrollReveal();
+
+    /*----------------------------------------------------*/
+    /*  Counter Animation
+      /*----------------------------------------------------*/
+    function animateCounters() {
+        $('.counter-number').each(function() {
+            var $this = $(this);
+            var target = parseInt($this.text().replace(/,/g, ''));
+            if (isNaN(target)) return;
+            
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        $({ count: 0 }).animate({ count: target }, {
+                            duration: 2000,
+                            easing: 'swing',
+                            step: function() {
+                                $this.text(Math.floor(this.count).toLocaleString());
+                            },
+                            complete: function() {
+                                $this.text(target.toLocaleString());
+                            }
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe($this[0]);
+        });
+    }
+    animateCounters();
+
+    /*----------------------------------------------------*/
+    /*  Smooth Scroll for Anchor Links
+      /*----------------------------------------------------*/
+    $('a[href*="#"]:not([href="#"]):not([data-toggle])').on('click', function(e) {
+        if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name="' + this.hash.slice(1) + '"]');
+            if (target.length) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 80
+                }, 800);
+            }
+        }
+    });
+
+    /*----------------------------------------------------*/
+    /*  Navbar Active State Based on Scroll
+      /*----------------------------------------------------*/
+    function updateActiveNav() {
+        var scrollPos = $(window).scrollTop();
+        $('.nav-link[href^="#"]').each(function() {
+            var target = $($(this).attr('href'));
+            if (target.length) {
+                var offset = target.offset().top - 100;
+                if (scrollPos >= offset && scrollPos < offset + target.outerHeight()) {
+                    $(this).closest('.nav-item').addClass('active').siblings().removeClass('active');
+                }
+            }
+        });
+    }
+    $(window).on('scroll', updateActiveNav);
+
+    /*----------------------------------------------------*/
+    /*  Back to Top Button
+      /*----------------------------------------------------*/
+    var $backToTop = $('<a/>', {
+        href: '#',
+        class: 'scrollToTop',
+        html: '<i class="ti-angle-up"></i>',
+        style: 'display: none; position: fixed; bottom: 30px; right: 30px; background: rgb(0, 128, 111); color: #fff; width: 50px; height: 50px; line-height: 50px; text-align: center; border-radius: 50%; z-index: 999; font-size: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);'
+    });
+    $('body').append($backToTop);
+    
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 400) {
+            $backToTop.fadeIn();
+        } else {
+            $backToTop.fadeOut();
+        }
+    });
+    
+    $backToTop.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, 600);
+    });
+
+    /*----------------------------------------------------*/
+    /*  Parallax Effect on Mouse Move
+      /*----------------------------------------------------*/
+    $('.parallax-move').on('mousemove', function(e) {
+        var x = (e.clientX / $(window).width() - 0.5) * 10;
+        var y = (e.clientY / $(window).height() - 0.5) * 10;
+        $(this).find('.parallax-layer').css('transform', 'translate(' + x + 'px, ' + y + 'px)');
+    });
+
+    /*----------------------------------------------------*/
     /*  Google map js
       /*----------------------------------------------------*/
 
