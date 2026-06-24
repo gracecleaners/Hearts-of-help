@@ -557,7 +557,8 @@ button:focus {
 
 .banner_area {
     position: relative;
-    background: url(../img/banner/banner.jpg) no-repeat center center;
+    background: url(../img/5.jpeg) no-repeat center center;
+    background-size: cover;
     z-index: 1;
     min-height: 492px;
     padding-top: 0 !important;
