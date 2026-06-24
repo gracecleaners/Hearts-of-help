@@ -1,575 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="icon" href="img/favicon.png" type="image/png" />
-    <title>Hearts Of Help</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/flaticon.css" />
-    <link rel="stylesheet" href="css/themify-icons.css" />
-    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css" />
-    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css" />
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <!-- main css -->
-    <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link rel="icon" href="img/favicon.png" type="image/png" />
+  <title>Hearts Of Help — Making a Difference in Uganda</title>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/flaticon.css" />
+  <link rel="stylesheet" href="css/themify-icons.css" />
+  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .hero-bg { position: relative; min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, rgba(0,35,71,0.88), rgba(0,128,111,0.55)), url('img/5.jpeg') center/cover fixed; }
+    .hero-bg h1 { font-size: 3.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+    .hero-badge { display: inline-block; padding: 8px 20px; border-radius: 50px; background: rgba(255,255,255,0.15); color: #fff; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; backdrop-filter: blur(4px); }
+    .section-dark { background: #002347; color: #fff; }
+    .section-light { background: #f8f9fa; }
+    .impact-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); transition: all 0.4s ease; height: 100%; }
+    .impact-card:hover { transform: translateY(-8px); box-shadow: 0 16px 48px rgba(0,35,71,0.15); }
+    .impact-card img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.6s ease; }
+    .impact-card:hover img { transform: scale(1.08); }
+    .impact-card-body { padding: 24px; }
+    .icon-circle { width: 56px; height: 56px; border-radius: 50%; background: rgba(0,128,111,0.1); display: flex; align-items: center; justify-content: center; font-size: 24px; color: rgb(0,128,111); margin-bottom: 16px; transition: all 0.3s ease; }
+    .feature-card:hover .icon-circle { background: rgb(0,128,111); color: #fff; transform: scale(1.1); }
+    .feature-card { background: #fff; padding: 32px 28px; border-radius: 16px; transition: all 0.4s ease; border: 1px solid #eee; height: 100%; }
+    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,35,71,0.1); border-color: rgb(0,128,111); }
+    .testimonial-card { background: #fff; padding: 36px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 24px; transition: all 0.3s ease; }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,35,71,0.1); }
+    .testimonial-card img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+    .stat-card { text-align: center; padding: 40px 20px; transition: all 0.3s ease; }
+    .stat-card:hover { transform: translateY(-5px); }
+    .stat-number { font-size: 48px; font-weight: 700; color: rgb(0,128,111); line-height: 1.2; margin-bottom: 4px; }
+    .stat-label { font-size: 14px; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 2px; }
+    .hero-social a { width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); margin: 0 6px; transition: all 0.3s ease; font-size: 18px; text-decoration: none; }
+    .hero-social a:hover { background: rgb(0,128,111); color: #fff; transform: translateY(-3px); }
+    .btn-outline-custom { border: 2px solid rgba(255,255,255,0.6); color: #fff; padding: 12px 36px; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; display: inline-block; text-decoration: none; }
+    .btn-outline-custom:hover { background: #fff; color: #002347; border-color: #fff; }
+    .btn-primary-custom { background: rgb(0,128,111); color: #fff; padding: 12px 36px; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; border: none; display: inline-block; text-decoration: none; cursor: pointer; }
+    .btn-primary-custom:hover { background: #002347; color: rgb(0,128,111); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,128,111,0.3); }
+    .location-tag { display: inline-block; padding: 4px 14px; border-radius: 50px; background: rgba(0,128,111,0.1); color: rgb(0,128,111); font-size: 12px; font-weight: 600; margin-bottom: 12px; }
+    .team-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: all 0.4s ease; }
+    .team-card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,35,71,0.12); }
+    .team-card img { width: 100%; height: 260px; object-fit: cover; }
+    .team-card-body { padding: 20px 24px 24px; text-align: center; }
+    .gallery-img { height: 200px; background-size: cover !important; background-position: center !important; border-radius: 12px; transition: all 0.4s ease; position: relative; overflow: hidden; }
+    .gallery-img:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    @media (max-width: 768px) { .hero-bg h1 { font-size: 2rem !important; } }
+  </style>
 </head>
-
 <body>
-    <!--================ Start Header Menu Area =================-->
-
-    <section style="background-color: rgb(0, 128, 111)">
-        <div class="container">
-            <p class="text-light">
-                + 256 754645136 | +256 788737925
-            </p>
-        </div>
-        <hr />
-    </section>
-    <header class="header_area bg-light">
-        <div class="main_menu">
-            <div class="search_input" id="search_input_box">
-                <div class="container">
-                    <form class="d-flex justify-content-between" method="" action="">
-                        <input type="text" class="form-control" id="search_input" placeholder="Search Here" />
-                        <button type="submit" class="btn"></button>
-                        <span class="ti-close" id="close_search" title="Close Search"></span>
-                    </form>
-                </div>
-            </div>
-
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class='navbar-brand logo_h' href='/'><img src="img/logo1.png" width="100" alt=""
-            /></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="icon-bar"></span> <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav menu_nav ml-auto">
-                            <li class="nav-item active">
-                                <a class='nav-link' href='index.html'>HOME</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class='nav-link' href='about-us.html'>ABOUT US</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class='nav-link' href='whatwedo.html'>WHAT WE DO</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class='nav-link' href='wherewework.html'>WHERE WE WORK</a>
-                            </li>
-                            
-                                    <li class="nav-item">
-                                        <a class='nav-link' href='contact.html'>CONTACT US</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link search">
-                    <button
-                      class="btn"
-                      style="background-color: rgb(0, 128, 111); color: white"
-                    >
-                      Donate
-                    </button>
-                  </a>
-                                    </li>
-                                </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!--================ End Header Menu Area =================-->
-
-    <!--================ Start Home Banner Area =================-->
-    <section class="home_banner_area" style="
-        z-index: 1;
-        min-height: 900px;
-        position: relative;
-        background-image: linear-gradient(
-            to top,
-            rgba(0.8706, 0.7961, 0.6431, 0.52),
-            rgba(0.2431, 0.3176, 0.3176, 0.8)
-          ),
-          url('img/5.jpeg');
-        background-position: center;
-        position: relative;
-        background-size: cover;
-      ">
-        <div class="banner_inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="banner_content text-center reveal">
-                            <h3 class="text-uppercase text-light reveal" style="animation-delay: 0.2s">
-                                Make a difference today
-                            </h3>
-                            <h4 class="mt-5 mb-5 reveal" style="color: rgba(230, 230, 230,.7); animation-delay: 0.4s">
-                                Together, we can create positive, lasting change and brighten the future for those in need through our donations.
-                            </h4>
-                            <div class="reveal" style="animation-delay: 0.6s">
-                                <a href="#" class="primary-btn2 mb-3 mb-sm-0 hover-lift">Become a volunteer</a
-                  >
-                  <a href="#" class="primary-btn ml-sm-3 ml-0 hover-lift">Donate Now</a>
-                            </div>
-                        </div>
-                        <div class="text-center mt-5 footer-social">
-                            <a href="#" class="btn" style="
-                    background-color: rgba(0, 128, 111, 0.7);
-                    color: rgba(255, 255, 255, 0.7);
-                    margin-top: 50px;
-                  "><i class="ti-facebook"></i
-                ></a>
-                            <a href="#" class="btn" style="
-                    background-color: rgba(0, 128, 111, 0.7);
-                    color: rgba(255, 255, 255, 0.7);
-                    margin-top: 50px;
-                  "><i class="ti-twitter"></i
-                ></a>
-                            <a href="#" class="btn" style="
-                    background-color: rgba(0, 128, 111, 0.7);
-                    color: rgba(255, 255, 255, 0.7);
-                    margin-top: 50px;
-                  "><i class="ti-dribbble"></i
-                ></a>
-                            <a href="#" class="btn" style="
-                    background-color: rgba(0, 128, 111, 0.7);
-                    color: rgba(255, 255, 255, 0.7);
-                    margin-top: 50px;
-                  "><i class="ti-linkedin"></i
-                ></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================ End Home Banner Area =================-->
-
-    <!--================ Start Feature Area =================-->
-    <section class="feature_area section_gap_top">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-12">
-                    <div class="main_title reveal">
-                        <h2 class="mb-3">Our Humanitarian Work</h2>
-                        <div class="section-divider"></div>
-                        <p>
-                            As a dedicated non-governmental organization (NGO), we are committed to improving the lives of vulnerable communities in Uganda. Our mission is simple: to provide essential support and relief to those in need. We focus on addressing basic needs such as food security, clean water, healthcare, education, and shelter, ensuring that everyone has access to the essentials for a dignified life. Through our various programs and initiatives, we reach out to the most vulnerable members of society, offering them a lifeline during their time of need. Our goal is to alleviate suffering and create positive, sustainable change that will last for generations to come. With your support, we can make an even greater impact. Whether you choose to donate, volunteer, or spread the word about our cause, every action counts. Together, we can provide hope, opportunity, and a better future for those who need it most.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================ End Feature Area =================-->
-
-    <!--================ Start Stats Counter Area =================-->
-    <section class="registration_area section_gap_top">
-        <div class="container">
-            <div class="row reveal stagger-children">
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item">
-                        <span class="stat-icon">🤝</span>
-                        <div class="stat-number counter-number">500</div>
-                        <div class="stat-label">Lives Impacted</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item">
-                        <span class="stat-icon">🌍</span>
-                        <div class="stat-number counter-number">12</div>
-                        <div class="stat-label">Communities Reached</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item">
-                        <span class="stat-icon">💧</span>
-                        <div class="stat-number counter-number">10000</div>
-                        <div class="stat-label">Meals Provided</div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat-item">
-                        <span class="stat-icon">🎓</span>
-                        <div class="stat-number counter-number">8</div>
-                        <div class="stat-label">Ongoing Projects</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================ End Stats Counter Area =================-->
-
-    <div class="row reveal">
-        <div class="col-2"></div>
-        <div class="col-lg-8 col-md-8">
-            <div class="single_event position-relative">
-                <div class="event_thumb1 img-hover-zoom">
-                    <img src="3.jpeg" alt="Community outreach" />
-                </div>
-                <div class="event_details1">
-                    <p>
-                        Your donation has the power to change lives. Your generosity offers hope, dignity, and the chance for a better future to those who need it most. Together, we can alleviate suffering and create lasting change in the lives of vulnerable individuals and
-                        communities.
-                    </p>
-                    <a href="#" class="primary-btn rounded-0 mt-3 hover-lift">View Details</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-2"></div>
+  <section style="background-color: rgb(0, 128, 111); padding: 6px 0;">
+    <div class="container d-flex justify-content-between align-items-center">
+      <p class="text-light mb-0" style="font-size: 14px;"><i class="ti-mobile mr-2"></i> +256 754645136 | +256 788737925</p>
+      <div class="hero-social d-none d-md-block">
+        <a href="#"><i class="ti-facebook"></i></a>
+        <a href="#"><i class="ti-twitter"></i></a>
+        <a href="#"><i class="ti-linkedin"></i></a>
+      </div>
     </div>
-
-    
-    <div class="section_gap registration_area">
+  </section>
+  <header class="header_area bg-light">
+    <div class="main_menu">
+      <div class="search_input" id="search_input_box">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7 reveal-left">
-                    <div class="row clock_sec clockdiv" id="clockdiv">
-                        <div class="col-lg-12">
-                            <h1 class="mb-3">Register Now</h1>
-                            <p>
-                                Join us as a volunteer and become part of our humanitarian mission to uplift underserved communities across Uganda.
-                            </p>
-                        </div>
-                        <div class="col clockinner1 clockinner">
-                            <h1 class="days"></h1>
-                            <span class="smalltext"></span>
-                        </div>
-                        <div class="col clockinner clockinner1">
-                            <h1 class="hours"></h1>
-                            <span class="smalltext"></span>
-                        </div>
-                        <div class="col clockinner clockinner1">
-                            <h1 class="minutes"></h1>
-                            <span class="smalltext"></span>
-                        </div>
-                        <div class="col clockinner clockinner1">
-                            <h1 class="seconds"></h1>
-                            <span class="smalltext"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 offset-lg-1 reveal-right">
-                    <div class="register_form hover-lift">
-                        <h3>Volunteer Registration</h3>
-                        <p>It is time for change</p>
-                        <form class="form_area" id="myForm" action="mail.html" method="post">
-                            <div class="row">
-                                <div class="col-lg-12 form_group">
-                                    <input name="name" placeholder="Your Full Name" required="" type="text" />
-                                    <input name="phone" placeholder="Your Phone Number" required="" type="tel" />
-                                    <input name="email" placeholder="Your Email Address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required="" type="email" />
-                                </div>
-                                <div class="col-lg-12 text-center">
-                                    <button class="primary-btn text-light hover-lift">Submit Application</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+          <form class="d-flex justify-content-between" action="">
+            <input type="text" class="form-control" id="search_input" placeholder="Search Here" />
+            <button type="submit" class="btn"></button>
+            <span class="ti-close" id="close_search" title="Close Search"></span>
+          </form>
         </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand logo_h" href="/"><img src="img/logo1.png" width="100" alt="Hearts Of Help" /></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto">
+              <li class="nav-item active"><a class="nav-link" href="index.html">HOME</a></li>
+              <li class="nav-item"><a class="nav-link" href="about-us.html">ABOUT US</a></li>
+              <li class="nav-item"><a class="nav-link" href="whatwedo.html">WHAT WE DO</a></li>
+              <li class="nav-item"><a class="nav-link" href="wherewework.html">WHERE WE WORK</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT US</a></li>
+              <li class="nav-item">
+                <a href="#" class="nav-link search">
+                  <button class="btn" style="background-color: rgb(0, 128, 111); color: white; border-radius: 50px; padding: 8px 24px;">Donate</button>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-    <!--================ End Registration Area =================-->
+  </header>
 
-    <!--================ Start Events Area =================-->
-    <div class="events_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="main_title">
-                        <h2 class="mb-3 text-white">Upcoming Donations</h2>
-
-                    </div>
-                </div>
-            </div>
-            <div class="row reveal stagger-children">
-                <div class="col-lg-6 col-md-6">
-                    <div class="single_event position-relative hover-lift">
-                        <div class="event_thumb img-hover-zoom">
-                            <img src="1.jpeg" alt="Community outreach in Kasanvu" />
-                        </div>
-                        <div class="event_details">
-                            <div class="d-flex mb-4">
-                                <div class="date"><span>15</span> May</div>
-
-                                <div class="time-location">
-                                    <p>
-                                        <span class="ti-time mr-2"></span> 09:00 AM - 02:30 PM
-                                    </p>
-                                    <p>
-                                        <span class="ti-location-pin mr-2"></span> Kasanvu, Kampala
-                                    </p>
-                                </div>
-                            </div>
-                            <p>
-                                Reaching out to communities in Kasanvu with scholastic materials and educational support for underprivileged children.
-                            </p>
-                            <p class="primary-btn rounded-0 mt-3 hover-lift">View Details</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 mt-5">
-                    <div class="single_event position-relative hover-lift">
-                        <div class="event_thumb img-hover-zoom">
-                            <img src="2.jpeg" alt="Food distribution in Kisugu" />
-                        </div>
-                        <div class="event_details">
-                            <div class="d-flex mb-4">
-                                <div class="date"><span>05</span> Jun</div>
-
-                                <div class="time-location">
-                                    <p>
-                                        <span class="ti-time mr-2"></span> 09:00 AM - 02:30 PM
-                                    </p>
-                                    <p>
-                                        <span class="ti-location-pin mr-2"></span> Kisugu, Kampala
-                                    </p>
-                                </div>
-                            </div>
-                            <p>
-                                Providing food supplies and hygiene essentials to families in Kisugu, ensuring basic needs are met for vulnerable households.
-                            </p>
-                            <p class="primary-btn rounded-0 mt-3 hover-lift">View Details</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-12">
-                    <div class="text-center pt-lg-5 pt-3">
-                        <a href="#" class="event-link hover-lift">
-                View All Events <img src="img/next.png" alt="" />
-              </a>
-                    </div>
-                </div>
-            </div>
+  <section class="hero-bg">
+    <div class="container text-center">
+      <div class="reveal" style="animation-delay: 0.2s"><span class="hero-badge">Non-Profit Organization</span></div>
+      <h1 class="text-white fw-bold mb-4 reveal" style="animation-delay: 0.3s;">Make a Difference<br /><span style="color: rgb(0, 128, 111);">Today</span></h1>
+      <p class="lead text-white-50 mb-5 reveal" style="animation-delay: 0.4s; max-width: 650px; margin: 0 auto 2rem; font-size: 1.2rem; opacity: 0.85;">Together, we can create positive, lasting change and brighten the future for those in need. Join our mission to uplift communities across Uganda.</p>
+      <div class="reveal" style="animation-delay: 0.6s">
+        <a href="#" class="btn-primary-custom hover-lift mr-3 mb-2">Become a Volunteer</a>
+        <a href="#" class="btn-outline-custom hover-lift">Donate Now</a>
+      </div>
+      <div class="mt-5 pt-4 reveal" style="animation-delay: 0.8s">
+        <div class="hero-social">
+          <a href="#"><i class="ti-facebook"></i></a>
+          <a href="#"><i class="ti-twitter"></i></a>
+          <a href="#"><i class="ti-dribbble"></i></a>
+          <a href="#"><i class="ti-linkedin"></i></a>
         </div>
+      </div>
     </div>
-    <!--================ End Events Area =================-->
+  </section>
 
-    <!--================ Start Testimonial Area =================-->
-    <div class="testimonial_area section_gap">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="main_title">
-                        <h2 class="mb-3">What community says about us</h2>
-                        <p>
-                            It's a pleasure to hear from happy communities
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="testi_slider owl-carousel">
-                    <div class="testi_item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <img src="img/team/derick.jpg" alt="" />
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="testi_text">
-                                    <h4>Elite Martin</h4>
-                                    <p>
-                                        The food distribution program has been a lifeline for us. Thank you for your kindness.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testi_item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <img src="img/team/derick.jpg" alt="" />
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="testi_text">
-                                    <h4>Davil Saden</h4>
-                                    <p>
-                                        Your healthcare outreach has saved lives in our community. We appreciate all that you do.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testi_item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <img src="img/team/derick.jpg" alt="" />
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="testi_text">
-                                    <h4>Elite Martin</h4>
-                                    <p>
-                                        Thanks to your organization, our children have access to scholastic materials. Education is now within reach.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testi_item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <img src="img/team/derick.jpg" alt="" />
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="testi_text">
-                                    <h4>Davil Saden</h4>
-                                    <p>
-                                        our community development projects have transformed our living conditions. We're so thankful for your dedication
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testi_item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <img src="img/team/derick.jpg" alt="" />
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="testi_text">
-                                    <h4>Elite Martin</h4>
-                                    <p>
-                                        Their support with education has changed my child's life. We're forever grateful
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testi_item">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <img src="img/team/derick.jpg" alt="" />
-                            </div>
-                            <div class="col-lg-8">
-                                <div class="testi_text">
-                                    <h4>Davil Saden</h4>
-                                    <p>
-                                        Your organization brings hope to our community. Thank you for everything you do for us
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section class="section_gap section-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0 reveal-left">
+          <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.1);">
+            <img src="img/3.jpeg" alt="Hearts Of Help community work" class="img-fluid" style="width: 100%; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+          </div>
         </div>
+        <div class="col-lg-5 offset-lg-1 reveal-right">
+          <div style="width: 60px; height: 3px; background: rgb(0,128,111); border-radius: 2px; margin-bottom: 20px;"></div>
+          <h2 class="mb-4" style="font-size: 2rem; color: #002347;">Our Humanitarian Mission</h2>
+          <p class="mb-4" style="line-height: 1.8; color: #555;">As a dedicated non-governmental organization (NGO), we are committed to improving the lives of vulnerable communities in Uganda. We focus on addressing basic needs such as food security, clean water, healthcare, education, and shelter.</p>
+          <p class="mb-4" style="line-height: 1.8; color: #555;">Through our programs and initiatives, we reach out to the most vulnerable members of society, offering them a lifeline during their time of need.</p>
+          <a href="about-us.html" class="btn-primary-custom hover-lift">Learn More About Us</a>
+        </div>
+      </div>
     </div>
-    <!--================ End Testimonial Area =================-->
+  </section>
 
-    <!--================ Start footer Area  =================-->
-    <footer class="footer-area section_gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2 col-md-6 single-footer-widget">
-                    <h4>Approaches</h4>
-                    <ul>
-                        <li>
-                            <p>Provision</p>
-                        </li>
-                        <li>
-                            <p>Empowerment</p>
-                        </li>
-                        <li>
-                            <p>Awareness</p>
-                        </li>
-                        <li>
-                            <p>Collaboration</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-6 single-footer-widget">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">What we do</a></li>
-                        <li><a href="#">Where we work</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-6 single-footer-widget">
-                    <h4>Features</h4>
-                    <ul>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">Events</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-6 single-footer-widget">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Publications</a></li>
-                        <li><a href="#">Success Stories</a></li>
-                        <li><a href="#">Donate</a></li>
-                        <li><a href="#">Fundraise</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6 single-footer-widget">
-                    <h4>Newsletter</h4>
-                    <p>You can trust us.</p>
-                    <div class="form-wrap" id="mc_embed_signup">
-                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
-                            <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address'" required="" type="email" />
-                            <button class="click-btn btn btn-default">
-                  <span>subscribe</span>
-                </button>
-                            <div style="position: absolute; left: -5000px">
-                                <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text" />
-                            </div>
+  <section class="section-dark py-5">
+    <div class="container">
+      <div class="row stagger-children">
+        <div class="col-lg-3 col-md-6"><div class="stat-card"><div class="stat-number counter-number">500</div><div class="stat-label">Lives Impacted</div></div></div>
+        <div class="col-lg-3 col-md-6"><div class="stat-card"><div class="stat-number counter-number">12</div><div class="stat-label">Communities Reached</div></div></div>
+        <div class="col-lg-3 col-md-6"><div class="stat-card"><div class="stat-number counter-number">10000</div><div class="stat-label">Meals Provided</div></div></div>
+        <div class="col-lg-3 col-md-6"><div class="stat-card"><div class="stat-number counter-number">8</div><div class="stat-label">Ongoing Projects</div></div></div>
+      </div>
+    </div>
+  </section>
 
-                            <div class="info"></div>
-                        </form>
-                    </div>
-                </div>
+  <section class="section_gap">
+    <div class="container">
+      <div class="main_title reveal">
+        <h2 class="mb-3">Our Recent Impact</h2>
+        <div style="width: 60px; height: 3px; background: rgb(0,128,111); margin: 0 auto 20px; border-radius: 2px;"></div>
+        <p>Every donation creates ripples of change in communities across Uganda</p>
+      </div>
+      <div class="row stagger-children">
+        <div class="col-lg-6 mb-4">
+          <div class="impact-card">
+            <img src="img/1.jpeg" alt="Community outreach in Kasanvu" />
+            <div class="impact-card-body">
+              <span class="location-tag"><i class="ti-location-pin mr-1"></i> Kasanvu, Kampala</span>
+              <h4 style="color: #002347;">Educational Support Drive</h4>
+              <p style="color: #666;">Reaching out to communities with scholastic materials and educational support for underprivileged children.</p>
+              <a href="#" class="btn-primary-custom hover-lift" style="padding: 8px 24px; font-size: 12px;">View Details</a>
             </div>
-            <div class="row footer-bottom d-flex justify-content-between">
-                <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script>
-                    All rights reserved | Hearts Of Help
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-                <div class="col-lg-4 col-sm-12 footer-social">
-                    <a href="#"><i class="ti-facebook"></i></a>
-                    <a href="#"><i class="ti-twitter"></i></a>
-                    <a href="#"><i class="ti-dribbble"></i></a>
-                    <a href="#"><i class="ti-linkedin"></i></a>
-                </div>
-            </div>
+          </div>
         </div>
-    </footer>
-    <!--================ End footer Area  =================-->
+        <div class="col-lg-6 mb-4">
+          <div class="impact-card">
+            <img src="img/2.jpeg" alt="Food distribution in Kisugu" />
+            <div class="impact-card-body">
+              <span class="location-tag"><i class="ti-location-pin mr-1"></i> Kisugu, Kampala</span>
+              <h4 style="color: #002347;">Food & Hygiene Distribution</h4>
+              <p style="color: #666;">Providing food supplies and hygiene essentials to vulnerable families, ensuring basic needs are met.</p>
+              <a href="#" class="btn-primary-custom hover-lift" style="padding: 8px 24px; font-size: 12px;">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-    <script src="js/owl-carousel-thumb.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <!--gmaps Js-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-    <script src="js/gmaps.min.js"></script>
-    <script src="js/theme.js"></script>
+  <section class="section_gap section-light">
+    <div class="container">
+      <div class="main_title reveal">
+        <h2 class="mb-3">Why Support Us</h2>
+        <div style="width: 60px; height: 3px; background: rgb(0,128,111); margin: 0 auto 20px; border-radius: 2px;"></div>
+        <p>Our approach is rooted in compassion, transparency, and sustainable impact</p>
+      </div>
+      <div class="row stagger-children">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-card text-center">
+            <div class="icon-circle mx-auto"><i class="ti-heart"></i></div>
+            <h4 style="color: #002347;">Compassionate Care</h4>
+            <p style="color: #666;">Every person we serve is treated with dignity and respect. We believe in the power of kindness.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-card text-center">
+            <div class="icon-circle mx-auto"><i class="ti-stats-up"></i></div>
+            <h4 style="color: #002347;">Sustainable Impact</h4>
+            <p style="color: #666;">We don't just provide aid — we empower communities to build self-sufficient futures.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-card text-center">
+            <div class="icon-circle mx-auto"><i class="ti-hand-open"></i></div>
+            <h4 style="color: #002347;">100% Transparency</h4>
+            <p style="color: #666;">Your donations go directly to those who need them. We are accountable to our supporters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="testimonial_area section_gap">
+    <div class="container">
+      <div class="main_title reveal">
+        <h2 class="mb-3 text-white">What Community Says About Us</h2>
+        <div style="width: 60px; height: 3px; background: rgb(0,128,111); margin: 0 auto 20px; border-radius: 2px;"></div>
+        <p style="color: rgba(255,255,255,0.6);">Hear from the communities we've had the privilege to serve</p>
+      </div>
+      <div class="row">
+        <div class="testi_slider owl-carousel">
+          <div class="testimonial-card"><div class="d-flex align-items-center mb-3"><img src="img/team/derick.jpg" alt="" style="width:60px;height:60px;border-radius:50%;object-fit:cover;margin-right:16px" /><div><h5 class="mb-0" style="color:#002347">Elite Martin</h5><small style="color:#999">Community Member</small></div></div><p style="color:#555;font-style:italic">"The food distribution program has been a lifeline for us. Thank you for your kindness."</p></div>
+          <div class="testimonial-card"><div class="d-flex align-items-center mb-3"><img src="img/team/derick.jpg" alt="" style="width:60px;height:60px;border-radius:50%;object-fit:cover;margin-right:16px" /><div><h5 class="mb-0" style="color:#002347">Davil Saden</h5><small style="color:#999">Community Member</small></div></div><p style="color:#555;font-style:italic">"Your healthcare outreach has saved lives in our community."</p></div>
+          <div class="testimonial-card"><div class="d-flex align-items-center mb-3"><img src="img/team/derick.jpg" alt="" style="width:60px;height:60px;border-radius:50%;object-fit:cover;margin-right:16px" /><div><h5 class="mb-0" style="color:#002347">Sarah Nakato</h5><small style="color:#999">Beneficiary</small></div></div><p style="color:#555;font-style:italic">"Our children have access to scholastic materials. Education is now within reach."</p></div>
+          <div class="testimonial-card"><div class="d-flex align-items-center mb-3"><img src="img/team/derick.jpg" alt="" style="width:60px;height:60px;border-radius:50%;object-fit:cover;margin-right:16px" /><div><h5 class="mb-0" style="color:#002347">Peter Okello</h5><small style="color:#999">Community Leader</small></div></div><p style="color:#555;font-style:italic">"Your projects have transformed our living conditions. We're so thankful."</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section_gap section-light text-center">
+    <div class="container">
+      <div class="reveal">
+        <div style="width: 60px; height: 3px; background: rgb(0,128,111); margin: 0 auto 20px; border-radius: 2px;"></div>
+        <h2 class="mb-3" style="color: #002347; font-size: 2rem;">Ready to Make a Difference?</h2>
+        <p class="mb-5" style="max-width: 600px; margin: 0 auto; color: #666;">Join us as a volunteer and become part of our humanitarian mission to uplift underserved communities across Uganda.</p>
+        <a href="#" class="btn-primary-custom hover-lift mr-3 mb-2">Register as Volunteer</a>
+        <a href="#" class="btn-outline-custom hover-lift d-inline-block" style="border-color: rgb(0,128,111); color: rgb(0,128,111);">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-area section_gap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-6 single-footer-widget"><h4>Approaches</h4><ul><li><p>Provision</p></li><li><p>Empowerment</p></li><li><p>Awareness</p></li><li><p>Collaboration</p></li></ul></div>
+        <div class="col-lg-2 col-md-6 single-footer-widget"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about-us.html">About Us</a></li><li><a href="whatwedo.html">What we do</a></li><li><a href="wherewework.html">Where we work</a></li></ul></div>
+        <div class="col-lg-2 col-md-6 single-footer-widget"><h4>Contact</h4><ul><li><a href="contact.html">Contact us</a></li><li><p>+256 754645136</p></li><li><p>+256 788737925</p></li></ul></div>
+        <div class="col-lg-2 col-md-6 single-footer-widget"><h4>Support</h4><ul><li><p>Donate</p></li><li><p>Fundraise</p></li><li><p>Volunteer</p></li></ul></div>
+        <div class="col-lg-4 col-md-6 single-footer-widget">
+          <h4>Newsletter</h4><p>You can trust us. Stay updated with our work.</p>
+          <div class="form-wrap" id="mc_embed_signup">
+            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
+              <input class="form-control" name="EMAIL" placeholder="Your Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email Address'" required="" type="email" />
+              <button class="click-btn btn btn-default"><span>subscribe</span></button>
+              <div style="position: absolute; left: -5000px"><input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text" /></div>
+              <div class="info"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row footer-bottom d-flex justify-content-between">
+        <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Hearts Of Help</p>
+        <div class="col-lg-4 col-sm-12 footer-social">
+          <a href="#"><i class="ti-facebook"></i></a>
+          <a href="#"><i class="ti-twitter"></i></a>
+          <a href="#"><i class="ti-dribbble"></i></a>
+          <a href="#"><i class="ti-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+  <script src="js/owl-carousel-thumb.min.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/mail-script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+  <script src="js/gmaps.min.js"></script>
+  <script src="js/theme.js"></script>
 </body>
-
 </html>
